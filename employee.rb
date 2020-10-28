@@ -32,6 +32,18 @@ class Employee
     @active = input_active
   end
 
+  def first_name
+    @first_name
+  end
+
+  def last_name
+    @last_name
+  end
+
+  def first_name=(input_name)
+    @first_name = input_name
+  end
+
   def print_info
     p "#{@first_name} #{@last_name} makes $#{@salary.round} per year?"
   end
@@ -44,14 +56,19 @@ end
 
 employee1 = Employee.new("Majora", "Carter", 80000, true)
 
+employee1.first_name=("Arojam")
+p employee1.first_name
+
 employee1.print_info
-employee1.give_annual_raise
-employee1.print_info
+# employee1.give_annual_raise
+# employee1.print_info
+
+
 
 
 employee2 = Employee.new("Danilo", "Campos", 70000, false)
 
-employee2.print_info
-employee2.give_annual_raise
-employee2.print_info
+# employee2.print_info
+# employee2.give_annual_raise
+# employee2.print_info
 
