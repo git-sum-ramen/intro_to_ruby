@@ -74,8 +74,9 @@ class Manager < Employee
 
   def fire_all_employees
     p 'firing all employees'
-    @employees[0].active = false
-    @employees[1].active = false
+    @employees.each do |employee|
+      employee.active = false
+    end    
   end
 end
 
