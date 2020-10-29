@@ -60,9 +60,13 @@ class Manager < Employee
   end
 
   def give_all_raises
-    p 'you get a raise'
-    p @employees[0].give_annual_raise
-    p @employees[1].give_annual_raise
+    i = 0
+    while i < @employees.length
+      @employees[i].give_annual_raise
+      p 'you get a raise'
+      i += 1
+    end
+    p 'everybody gets a raise'
   end
 end
 
@@ -73,7 +77,7 @@ manager = Manager.new(first_name: "Manny", last_name: "Smith", salary: 100000, a
 # manager.send_report
 manager.give_all_raises
 
-p manager.employees
+# p manager.employees
 
 employee1.print_info
 employee2.print_info
