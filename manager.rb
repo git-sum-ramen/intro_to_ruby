@@ -26,7 +26,7 @@ employee1 = Employee.new({:first_name => "Majora", :last_name => "Carter", :sala
 # employee1.first_name = "Arojam"
 # p employee1.last_name
 
-employee1.print_info
+# employee1.print_info
 # employee1.give_annual_raise
 # employee1.print_info
 
@@ -35,9 +35,9 @@ employee1.print_info
 
 employee2 = Employee.new(first_name: "Danilo", last_name: "Campos", salary: 70000, active: false)
 
-employee2.print_info
+# employee2.print_info
 # employee2.give_annual_raise
-p employee2
+# p employee2
 
 
 
@@ -46,6 +46,8 @@ p employee2
 
 
 class Manager < Employee
+  attr_reader :employees
+  
   def initialize(input_options)
     super
     @employees = input_options[:employees]
@@ -56,6 +58,12 @@ class Manager < Employee
     # actual logic here
     p 'totally just sent that report'
   end
+
+  def give_all_raises
+    p 'you get a raise'
+    p @employees[0].give_annual_raise
+    p @employees[1].give_annual_raise
+  end
 end
 
 
@@ -63,4 +71,9 @@ manager = Manager.new(first_name: "Manny", last_name: "Smith", salary: 100000, a
 
 # manager.print_info
 # manager.send_report
-p manager
+manager.give_all_raises
+
+p manager.employees
+
+employee1.print_info
+employee2.print_info
