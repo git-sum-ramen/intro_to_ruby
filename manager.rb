@@ -37,7 +37,7 @@ employee2 = Employee.new(first_name: "Danilo", last_name: "Campos", salary: 7000
 
 employee2.print_info
 # employee2.give_annual_raise
-# employee2.print_info
+p employee2
 
 
 
@@ -46,6 +46,11 @@ employee2.print_info
 
 
 class Manager < Employee
+  def initialize(input_options)
+    super
+    @employees = input_options[:employees]
+  end
+
   def send_report
     p 'about to send the report...'
     # actual logic here
@@ -54,7 +59,8 @@ class Manager < Employee
 end
 
 
-manager = Manager.new(first_name: "Manny", last_name: "Smith", salary: 100000, active: true)
+manager = Manager.new(first_name: "Manny", last_name: "Smith", salary: 100000, active: true, employees: [employee1, employee2])
 
-manager.print_info
-manager.send_report
+# manager.print_info
+# manager.send_report
+p manager
