@@ -58,7 +58,7 @@ employee1.print_info
 
 
 
-employee2 = Employee.new({:first_name => "Danilo", :last_name => "Campos", :salary => 70000, :active => false})
+employee2 = Employee.new(first_name: "Danilo", last_name: "Campos", salary: 70000, active: false)
 
 employee2.print_info
 employee2.give_annual_raise
